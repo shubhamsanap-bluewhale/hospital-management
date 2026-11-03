@@ -1,0 +1,8 @@
+# Not needed inside the Railway container
+.git
+.railway
+*.bat
+*.sql
+*.sql.gz
+Dockerfile
+.dockerignore
