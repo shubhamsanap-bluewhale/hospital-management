@@ -67,7 +67,7 @@ class Paypal extends Patient_Controller {
                 $result = $this->patient_model->getIpdDetails($id);
                 $data = array();
                 $data['total'] = $this->input->post('total');
-                $data['productinfo'] = "bill payment smart hospital";
+                $data['productinfo'] = "bill payment BlueWhale HMS";
                 $data['symbol'] = $setting['currency_symbol'];
                 $data['currency_name'] = $setting['currency'];
                 $data['name'] = $result['patient_name'];
@@ -96,7 +96,7 @@ class Paypal extends Patient_Controller {
         $data['currency_name'] = $setting['currency'];
         $data['name'] = $result['patient_name'];
         $data['guardian_phone'] = $result['mobileno'];
-        $data['productinfo'] = "bill payment smart hospital";
+        $data['productinfo'] = "bill payment BlueWhale HMS";
 
         $response = $this->paypal_payment->success($data);
 

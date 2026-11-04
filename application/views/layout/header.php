@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title><?php echo $this->customlib->getAppName(); ?></title>       
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <meta name="theme-color" content="#5190fd" />
-        <link href="<?php echo base_url(); ?>backend/images/s-favican.png" rel="shortcut icon" type="image/x-icon">
+        <meta name="theme-color" content="#002FA7" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>backend/bootstrap/css/bootstrap.min.css">    
         <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/css/style-main.css"> 
         <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/css/jquery.mCustomScrollbar.min.css"> 
@@ -66,7 +65,7 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
-
+        <?php $this->load->view('bluewhale/panel_head'); ?>
     </head>
     <script type="text/javascript">
 
@@ -137,8 +136,8 @@
         <div class="wrapper">
             <header class="main-header" id="alert">            
                 <a href="<?php echo base_url(); ?>admin/admin/dashboard" class="logo">                 
-                    <span class="logo-mini"><img width="31" height="19" src="<?php echo $mini_logo; ?>" alt="<?php echo $this->customlib->getAppName() ?>" /></span>                 
-                    <span class="logo-lg"><img src="<?php echo $logo_image; ?>" alt="<?php echo $this->customlib->getAppName() ?>" /></span>
+                    <span class="logo-mini"><span class="bw-hdr"><img src="<?php echo base_url(); ?>backend/bluewhale/img/logomark-white.svg" alt="<?php echo $this->customlib->getAppName() ?>" /></span></span>
+                    <span class="logo-lg"><span class="bw-hdr"><img src="<?php echo base_url(); ?>backend/bluewhale/img/logomark-white.svg" alt="" /><span><?php echo BW_APP_NAME; ?></span></span></span>
                 </a>             
                 <nav class="navbar navbar-static-top" role="navigation">                  
                     <a href="#"  onclick="collapseSidebar()"  class="sidebar-toggle" data-toggle="offcanvas" role="button">

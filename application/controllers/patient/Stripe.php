@@ -33,7 +33,7 @@ class Stripe extends Patient_Controller {
         $data = array();
         $id = $this->patient_data['patient_id'];
         $data["id"] = $id;
-        $data['productinfo'] = "bill payment smart hospital";
+        $data['productinfo'] = "bill payment BlueWhale HMS";
         if ($this->session->has_userdata('payment_amount')) {
 
             //$id = $this->patient_data['patient_id'];

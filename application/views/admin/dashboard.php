@@ -611,15 +611,19 @@
                     {
                         label: '<?php echo $this->lang->line('income') ?>',
                         fill: false,
-                        backgroundColor: '#66aa18',
-                        borderColor: '#66aa18',
+                        backgroundColor: '#1D4ED8', // BlueWhale brand blue
+                        borderColor: '#1D4ED8',
+                        borderWidth: 2,
+                        pointRadius: 4,
                         data: yearly_collection_array,
                     },
 
                     {
                         label: '<?php echo $this->lang->line('expense') ?>',
-                        backgroundColor: window.chartColors.red,
-                        borderColor: window.chartColors.red,
+                        backgroundColor: '#e34948',
+                        borderColor: '#e34948',
+                        borderWidth: 2,
+                        pointRadius: 4,
                         data: yearly_expense_array,
                         fill: false,
                     }
@@ -692,17 +696,21 @@
             data: {
                 datasets: [{
                         data: datas.value,
+                        // BlueWhale categorical order (validated for colour-blind separation); the 9th
+                        // slot (general income) is a neutral "other" grey rather than a 9th hue.
                         backgroundColor: [
-                            '#715d20',
-                            window.chartColors.orange,
-                            window.chartColors.yellow,
-                            window.chartColors.green,
-                            window.chartColors.purple,
-                            window.chartColors.blue,
-                            window.chartColors.grey,
-                            '#42b782',
-                            '#66aa18',
+                            '#1D4ED8', // OPD
+                            '#eb6834', // IPD
+                            '#1baf7a', // Pharmacy
+                            '#eda100', // Pathology
+                            '#e87ba4', // Radiology
+                            '#008300', // Operation theatre
+                            '#6250d6', // Blood bank
+                            '#e34948', // Ambulance
+                            '#8a94a6', // General income
                         ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
                         label: 'Dataset 1'
                     }],
                 labels: labe,

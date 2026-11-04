@@ -1,0 +1,171 @@
+/* ==========================================================================
+   BlueWhale Stack — admin & patient panel theme
+   Loaded last in layout/header.php and layout/patient/header.php so it wins
+   over AdminLTE, the skin and the legacy theme files without editing them.
+   ========================================================================== */
+
+:root {
+    --bw-blue: #002FA7;
+    --bw-blue-900: #001A63;
+    --bw-blue-800: #00227D;
+    --bw-blue-600: #0B3FC4;
+    --bw-blue-500: #1D4ED8;
+    --bw-blue-400: #3B6CF0;
+    --bw-indigo: #4F46E5;
+    --bw-tint-50: #F2F4F8;
+    --bw-tint-100: #EAEEF8;
+    --bw-tint-200: #CDD5EC;
+    --bw-ink: #0B1220;
+    --bw-text: #27304A;
+    --bw-muted: #5B647C;
+    --bw-line: #E3E7EF;
+    --bw-radius: 12px;
+    --bw-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 6px 18px -10px rgba(16, 24, 40, .14);
+}
+
+/* ------------------------------------------------------------ type --- */
+body,
+.main-header .navbar,
+.sidebar-menu,
+.content-wrapper,
+.modal,
+.btn,
+.form-control,
+.dropdown-menu,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+body { color: var(--bw-text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { color: var(--bw-blue-500); }
+a:hover, a:focus { color: var(--bw-blue); }
+
+/* ---------------------------------------------------------- header --- */
+.skin-blue .main-header .navbar {
+    background: linear-gradient(90deg, var(--bw-blue) 0%, var(--bw-blue-500) 58%, var(--bw-indigo) 100%);
+    border-bottom: 0;
+}
+.skin-blue .main-header .logo,
+.skin-blue .main-header .logo:hover { background-color: var(--bw-blue-800); }
+.skin-blue .main-header .navbar .sidebar-toggle:hover { background-color: rgba(255, 255, 255, .12); }
+.skin-blue .main-header .navbar .nav > li > a:hover,
+.skin-blue .main-header .navbar .nav > li > a:focus,
+.skin-blue .main-header .navbar .nav .open > a { background: rgba(255, 255, 255, .12); }
+.main-header .sidebar-session { font-weight: 700; letter-spacing: -.01em; }
+.skin-blue .main-header li.user-header { background-color: var(--bw-blue); }
+.main-header .search-form .form-control { border: 0; }
+
+/* BlueWhale lockup inside .logo */
+.main-header .logo .bw-hdr {
+    display: inline-flex; align-items: center; gap: 9px;
+    height: 50px; vertical-align: top;
+    color: #fff;
+}
+.main-header .logo .bw-hdr img { width: 24px; height: 24px; display: block; }
+.main-header .logo .bw-hdr span {
+    font-family: "Russo One", "Inter", sans-serif;
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase; line-height: 1;
+}
+.main-header .logo .logo-mini .bw-hdr img { width: 26px; height: 26px; }
+
+/* --------------------------------------------------------- sidebar --- */
+.skin-blue .main-sidebar,
+.skin-blue .left-side { background-color: #fff; border-right: 1px solid var(--bw-line); }
+.skin-blue .sidebar a { color: var(--bw-text); }
+.skin-blue .sidebar-menu > li > a { border-left: 3px solid transparent; font-weight: 500; }
+.skin-blue .sidebar-menu > li > a > .fa,
+.skin-blue .sidebar-menu > li > a > i { color: #6B7389; transition: color .15s; }
+.skin-blue .sidebar-menu > li:hover > a,
+.skin-blue .sidebar-menu > li.active > a {
+    color: var(--bw-blue);
+    background: var(--bw-tint-100);
+    border-left-color: var(--bw-blue);
+}
+.skin-blue .sidebar-menu > li:hover > a > .fa,
+.skin-blue .sidebar-menu > li.active > a > .fa,
+.skin-blue .sidebar-menu > li:hover > a > i,
+.skin-blue .sidebar-menu > li.active > a > i { color: var(--bw-blue); }
+.skin-blue .sidebar-menu > li > .treeview-menu { background: #F7F8FB; }
+.skin-blue .treeview-menu > li > a { color: var(--bw-muted); }
+.skin-blue .treeview-menu > li.active > a,
+.skin-blue .treeview-menu > li > a:hover { color: var(--bw-blue); }
+
+/* --------------------------------------------------------- content --- */
+.content-wrapper, .right-side { background-color: var(--bw-tint-50); }
+.main-footer { background: #fff; border-top: 1px solid var(--bw-line); color: var(--bw-muted); }
+
+.box {
+    border: 1px solid var(--bw-line);
+    border-top: 1px solid var(--bw-line);
+    border-radius: var(--bw-radius);
+    box-shadow: var(--bw-shadow);
+}
+.box.box-primary, .box.box-info, .box.box-warning, .box.box-success, .box.box-default { border-top-color: var(--bw-line); }
+.box-header { border-radius: var(--bw-radius) var(--bw-radius) 0 0; }
+.box-header.with-border { border-bottom: 1px solid #EDF0F6; }
+.box-header .box-title { color: var(--bw-ink); font-weight: 600; letter-spacing: -.01em; }
+.box-footer { border-radius: 0 0 var(--bw-radius) var(--bw-radius); }
+
+/* KPI tiles on the dashboards */
+.info-box {
+    border: 1px solid var(--bw-line);
+    border-radius: var(--bw-radius);
+    box-shadow: var(--bw-shadow);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.info-box:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(16, 24, 40, .05), 0 12px 24px -12px rgba(0, 47, 167, .28); }
+.info-box .info-box-icon { border-radius: 0; }
+.info-box .info-box-icon.bg-green  { background: linear-gradient(135deg, var(--bw-blue) 0%, var(--bw-blue-500) 100%) !important; }
+.info-box .info-box-icon.bg-yellow { background: linear-gradient(135deg, #4338CA 0%, #6366F1 100%) !important; }
+.info-box .info-box-icon.bg-aqua,
+.info-box .info-box-icon.bg-blue   { background: linear-gradient(135deg, #0369A1 0%, #0EA5E9 100%) !important; }
+.info-box .info-box-icon.expenes-red { background: linear-gradient(135deg, #BE123C 0%, #F43F5E 100%); }
+.info-box-text { color: var(--bw-muted); font-weight: 500; text-transform: none; }
+.info-box-number { color: var(--bw-ink); font-weight: 700; }
+
+/* ---------------------------------------------------------- buttons --- */
+.btn { border-radius: 8px; }
+.btn-primary,
+.btn-primary:focus {
+    background-color: var(--bw-blue-500);
+    border-color: var(--bw-blue-500);
+    color: #fff;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover,
+.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
+    background-color: var(--bw-blue);
+    border-color: var(--bw-blue);
+    color: #fff;
+}
+.btn-info, .btn-info:focus { background-color: #0369A1; border-color: #0369A1; color: #fff; }
+.btn-info:hover, .btn-info:active, .btn-info.hover { background-color: #075985; border-color: #075985; color: #fff; }
+.btn-success { background-color: #059669; border-color: #059669; }
+.btn-success:hover, .btn-success:active, .btn-success.hover { background-color: #047857; border-color: #047857; }
+
+/* ---------------------------------------------------- forms & widgets --- */
+.form-control:focus { border-color: var(--bw-blue-500); box-shadow: 0 0 0 3px rgba(29, 78, 216, .15); }
+.pagination > .active > a, .pagination > .active > span,
+.pagination > .active > a:hover, .pagination > .active > span:hover,
+.pagination > .active > a:focus, .pagination > .active > span:focus { background-color: var(--bw-blue-500); border-color: var(--bw-blue-500); }
+.nav-tabs-custom > .nav-tabs > li.active { border-top-color: var(--bw-blue); border-bottom-color: var(--bw-blue); }
+.nav-tabs-custom > .nav-tabs > li.active > a,
+.nav-tabs-custom > .nav-tabs > li.active:hover > a { color: var(--bw-blue); }
+.bg-light-blue, .label-primary { background-color: var(--bw-blue-500) !important; }
+.text-aqua, .text-light-blue { color: var(--bw-blue-500) !important; }
+.dropdown-menu > li > a:hover { background-color: var(--bw-tint-100); color: var(--bw-blue); }
+
+/* dark grey legacy bars -> brand */
+.modal-header { background: linear-gradient(90deg, var(--bw-blue) 0%, var(--bw-blue-500) 100%); color: #fff; border-bottom: 0; }
+.modal-header .modal-title { color: #fff; }
+.modal-header .close, .modal-header .close:hover, .modal-header .close:focus { color: #fff; opacity: .85; text-shadow: none; }
+.modal-content { border-radius: var(--bw-radius); overflow: hidden; border: 0; }
+.pagetitleh { background: var(--bw-blue); }
+
+/* calendar */
+.fc-state-default { background-color: #fff; color: var(--bw-text); border-color: var(--bw-tint-200); text-shadow: none; box-shadow: none; }
+.fc-button:hover, .fc-button.hover, .fc-state-hover { background-color: var(--bw-tint-100); color: var(--bw-blue); }
+.fc-state-active, .fc-state-down,
+.fc-button.fc-state-active { background-color: var(--bw-blue) !important; border-color: var(--bw-blue); color: #fff; box-shadow: none; }
+.fc-state-disabled { background: var(--bw-tint-200) !important; color: var(--bw-muted); }
+.fc-unthemed td.fc-today { background: #EEF2FB; }
+.fc-event, .fc-event-dot { border-radius: 6px; }
